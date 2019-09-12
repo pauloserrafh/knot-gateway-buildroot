@@ -1,0 +1,27 @@
+From 9103b997e649f8b27b0179173c5e7b4c2cab60f6 Mon Sep 17 00:00:00 2001
+From: Paulo Serra Filho <ptvsf@cin.ufpe.br>
+Date: Wed, 11 Sep 2019 23:13:49 -0300
+Subject: [PATCH] arm: Add support to RPi3
+
+ARMv8A is not supported on
+lib/cobalt/arch/arm/include/asm/xenomai/features.h
+---
+ lib/cobalt/arch/arm/include/asm/xenomai/features.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/lib/cobalt/arch/arm/include/asm/xenomai/features.h b/lib/cobalt/arch/arm/include/asm/xenomai/features.h
+index e84b809..22e364a 100644
+--- a/lib/cobalt/arch/arm/include/asm/xenomai/features.h
++++ b/lib/cobalt/arch/arm/include/asm/xenomai/features.h
+@@ -44,7 +44,7 @@
+ #define __LINUX_ARM_ARCH__ 6
+ #endif /* armv6 */
+
+-#if defined(__ARM_ARCH_7A__)
++#if defined(__ARM_ARCH_7A__) || defined(__ARM_ARCH_8A__)
+ #define __LINUX_ARM_ARCH__ 7
+ #endif /* armv7 */
+
+--
+2.7.4
+
